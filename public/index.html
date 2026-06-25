@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KPAY Portal - بوابة الدفع</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #e60012 0%, #c7000d 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #333;
+        }
+        
+        .container {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            max-width: 1200px;
+            width: 90%;
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #e60012 0%, #c7000d 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        
+        .header p {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+        
+        .content {
+            padding: 40px;
+        }
+        
+        .dashboard {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+        
+        .card {
+            background: #f8f9fa;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 20px rgba(230,0,18,0.1);
+        }
+        
+        .card h3 {
+            color: #e60012;
+            margin-bottom: 10px;
+            font-size: 1.3em;
+        }
+        
+        .card p {
+            color: #666;
+            font-size: 0.95em;
+            line-height: 1.6;
+        }
+        
+        .nav-buttons {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 30px;
+        }
+        
+        .btn {
+            background: linear-gradient(135deg, #e60012 0%, #c7000d 100%);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: transform 0.2s, box-shadow 0.2s;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(230,0,18,0.3);
+        }
+        
+        .btn-secondary {
+            background: #f0f0f0;
+            color: #e60012;
+            border: 2px solid #e60012;
+        }
+        
+        .btn-secondary:hover {
+            background: #e60012;
+            color: white;
+        }
+        
+        .features {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 8px;
+            margin-top: 30px;
+        }
+        
+        .features h2 {
+            color: #e60012;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+        
+        .feature-item {
+            text-align: center;
+            padding: 15px;
+        }
+        
+        .feature-item h4 {
+            color: #e60012;
+            margin-bottom: 10px;
+        }
+        
+        .feature-item p {
+            color: #666;
+            font-size: 0.9em;
+        }
+        
+        .footer {
+            background: #f0f0f0;
+            padding: 20px;
+            text-align: center;
+            color: #666;
+            border-top: 1px solid #e0e0e0;
+        }
+        
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 1.8em;
+            }
+            
+            .content {
+                padding: 20px;
+            }
+            
+            .nav-buttons {
+                flex-direction: column;
+            }
+            
+            .btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🔐 KPAY Portal</h1>
+            <p>بوابة الدفع الآمنة والموثوقة</p>
+        </div>
+        
+        <div class="content">
+            <div class="dashboard">
+                <div class="card">
+                    <h3>💰 الرصيد</h3>
+                    <p style="font-size: 1.5em; color: #e60012; margin: 10px 0;">1,250.50 د.ك</p>
+                    <p>رصيدك الحالي في المحفظة</p>
+                </div>
+                
+                <div class="card">
+                    <h3>📊 المعاملات</h3>
+                    <p style="font-size: 1.5em; color: #e60012; margin: 10px 0;">47</p>
+                    <p>إجمالي المعاملات هذا الشهر</p>
+                </div>
+                
+                <div class="card">
+                    <h3>✅ مكتملة</h3>
+                    <p style="font-size: 1.5em; color: #28a745; margin: 10px 0;">45</p>
+                    <p>معاملات مكتملة بنجاح</p>
+                </div>
+            </div>
+            
+            <div class="nav-buttons">
+                <button class="btn" onclick="showSection('dashboard')">📊 لوحة التحكم</button>
+                <button class="btn" onclick="showSection('payments')">💳 الدفعات</button>
+                <button class="btn" onclick="showSection('transactions')">📈 المعاملات</button>
+                <button class="btn" onclick="showSection('settings')">⚙️ الإعدادات</button>
+            </div>
+            
+            <div class="features">
+                <h2>✨ الميزات الرئيسية</h2>
+                <div class="features-grid">
+                    <div class="feature-item">
+                        <h4>🔒 أمان عالي</h4>
+                        <p>تشفير من الدرجة الأولى لحماية بيانات</p>
+                    </div>
+                    <div class="feature-item">
+                        <h4>⚡ سرعة فائقة</h4>
+                        <p>معالجة فورية للمعاملات المالية</p>
+                    </div>
+                    <div class="feature-item">
+                        <h4>📱 متوافق</h4>
+                        <p>يعمل على جميع الأجهزة والمتصفحات</p>
+                    </div>
+                    <div class="feature-item">
+                        <h4>🌐 دعم عالمي</h4>
+                        <p>يدعم عملات وطرق دفع متعددة</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>&copy; 2024 KPAY Portal. جميع الحقوق محفوظة.</p>
+        </div>
+    </div>
+    
+    <script>
+        function showSection(section) {
+            alert(`سيتم الانتقال إلى قسم: ${section}`);
+            // يمكن إضافة منطق الانتقال بين الأقسام هنا
+        }
+    </script>
+</body>
+</html>
